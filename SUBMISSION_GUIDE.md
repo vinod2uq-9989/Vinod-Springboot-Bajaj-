@@ -5,7 +5,7 @@ GitHub Submission Guide
 ✅ **Complete Spring Boot Project**: Full Maven structure in `src/` directory  
 ✅ **Successfully Tested**: Application runs and gets success response  
 
-Result:
+**Result**:
 SELECT
     p.AMOUNT as SALARY,
     CONCAT(e.FIRST_NAME, ' ', e.LAST_NAME) as NAME,
@@ -18,6 +18,24 @@ WHERE DAY(p.PAYMENT_TIME) != 1
 ORDER BY p.AMOUNT DESC
 LIMIT 1
 
-Success Response:
+**Success Response**:
 {"success":true,"message":"Webhook processed successfully"}
+
+
+**Execution Details**:
+Registration: 22BCE8419
+Question Type: Question 1 (19 is odd)
+Problem: Find highest salary NOT credited on 1st day of month
+JWT Token: Successfully received and used
+Submission:  "Webhook processed successfully"
+**What This Query Does**:
+Joins three tables: PAYMENTS → EMPLOYEE → DEPARTMENT
+Filters transactions: WHERE DAY(p.PAYMENT_TIME) != 1 (excludes 1st day)
+Finds highest salary: ORDER BY p.AMOUNT DESC LIMIT 1
+Returns required columns:
+SALARY: Payment amount
+NAME: Combined first + last name
+AGE: Calculated from DOB
+DEPARTMENT_NAME: Department name
+
 
